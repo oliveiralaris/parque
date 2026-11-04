@@ -1,0 +1,47 @@
+<%- include('../cabecalho')%>
+
+    <div>
+        <h3>Dinossauros do Parque</h3>
+        <p>Gerencie os dinossauros cadastrados no parque</p>
+        <a href="dinossauro/add">+ Novo Dinossauro</a><br><br>
+
+        <table>
+            <tr>
+                <td>Nome</td>
+                <td>Espécie</td>
+                <td>
+                    <h3>Dieta</h3>
+                </td>
+                <td>
+                    <h3>Descoberta</h3>
+                </td>
+                <td>
+                    <h3>Ações</h3>
+                </td>
+            </tr>
+
+            <%dinossauros.forEach(dinossauros=>{%>
+                <tr>
+                    <td>
+                        <%=dinossauros.nome%>
+                    </td>
+                    <td>
+                        <%=dinossauros.especie%>
+                    </td>
+                    <td>
+                        <%=dinossauros.dieta%>
+                    </td>
+                    <td>
+                        <%=dinossauros.anoDescoberta%>
+                    </td>
+                    <td>
+                        <a href="/dinossauro/upd/<%=dinossauros.id%>">✏️</a>
+                        <a href="/dinossauro/del/<%=dinossauros.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    </body>
+
+    </html>
